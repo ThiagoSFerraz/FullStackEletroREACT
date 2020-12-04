@@ -6,7 +6,7 @@ export default function Lista(){
         
             
                     <ListGroup>
-                        <ListGroup.Item>Todos (8)</ListGroup.Item>
+                        <ListGroup.Item>Todos (10)</ListGroup.Item>
                         <ListGroup.Item>Geladeira (3)</ListGroup.Item>
                         <ListGroup.Item>Fogão (2)</ListGroup.Item>
                         <ListGroupItem>Microondas (2)</ListGroupItem>
