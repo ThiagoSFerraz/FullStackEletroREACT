@@ -1,8 +1,12 @@
 import { Navbar, Nav } from 'react-bootstrap';
+import { Link, withRouter } from 'react-router-dom';
+import './menu.css';
 
-export default function Menu() {
+
+function BaseMenu(props) {
+    const { location } = props
     return(
-        <Navbar className="navbar-dark" bg="warning" expand="lg" fixed="top">
+        <Navbar className="navbar-white" bg="warning" expand="lg" fixed="top">
             <Navbar.Brand>
                 FullStackEletro
             </Navbar.Brand>
@@ -10,21 +14,25 @@ export default function Menu() {
             <Navbar.Collapse id="item-menu" />
                 <Nav className="ml-auto mr-3">
                     <Nav.Item>
-                        <Nav.Link href="/" to="/">Página Inicial</Nav.Link>
+                        <Nav.Link as={Link} href="/" to="/">Página Inicial</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="/produtos" to="/produtos" >Produtos</Nav.Link>
+                        <Nav.Link  as={Link} href="/produtos" to="/produtos" >Produtos</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="/contato" to="/contato" >Contato</Nav.Link>
+                        <Nav.Link  as={Link} href="/contato" to="/contato" >Contato</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="/pedidos" to="/pedidos" >Pedidos</Nav.Link>
+                        <Nav.Link  as={Link} href="/pedidos" to="/pedidos" >Pedidos</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="/lojas" to="/lojas" >Nossas lojas</Nav.Link>
+                        <Nav.Link  as={Link} href="/lojas" to="/lojas" >Nossas lojas</Nav.Link>
                     </Nav.Item>
                 </Nav>
         </Navbar>
     )
 }
+
+const Menu = withRouter(BaseMenu)
+
+export default Menu

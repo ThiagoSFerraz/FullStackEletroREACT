@@ -1,7 +1,7 @@
 import { Switch, Route } from 'react-router-dom';
 
-import { Produtos } from './pages/produtos'
-import { Pedidos } from './pages/pedidos'
+import  Produtos  from './pages/produtos'
+import  Pedidos  from './pages/pedidos'
 
 function Rotas() {
     return (
@@ -11,3 +11,5 @@ function Rotas() {
         </Switch>
     )
 }
+
+export default Rotas;
