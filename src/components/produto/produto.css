@@ -1,0 +1,32 @@
+
+
+html {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+body {
+	margin: 10px;
+	background: white;
+	font-weight: 800;
+}
+
+.container {
+	width: 100%;
+	margin: 0;
+}
+
+
+
+
+.clickbg {
+  position: relative;
+  width: 320px;
+  height: 60px;
+  top: 2px;
+  right: 16px;
+  background-color: #FFC107;
+}

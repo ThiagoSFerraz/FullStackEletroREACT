@@ -6,7 +6,7 @@ import  Pedidos  from './pages/pedidos'
 function Rotas() {
     return (
         <Switch>
-            <Route exact path="/" component={Produtos} />
+            <Route exact path="/produtos" component={Produtos} />
             <Route exact path="/pedidos" component={Pedidos} />
         </Switch>
     )
