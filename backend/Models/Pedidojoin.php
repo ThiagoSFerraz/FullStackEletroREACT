@@ -10,10 +10,10 @@ class PedidoJoin
         $connection = Connection::getDb();
 
         $stmt = $connection->query("SELECT
-        p.id_pedido as 'número do pedido',
-        c.nome_cliente as 'nome do cliente:',
-        pr.Descricao as 'nome do produto:',
-        pr.preco as 'preço do produto:'
+        p.id_pedido,
+        c.nome_cliente,
+        pr.Descricao,
+        pr.preco
         FROM cliente c
         JOIN pedidos p on c.id_cliente = p.id_cliente
         JOIN produtos pr on pr.id_produto = p.id_produto;");
