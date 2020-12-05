@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Dez-2020 às 14:28
+-- Tempo de geração: 05-Dez-2020 às 23:36
 -- Versão do servidor: 10.4.14-MariaDB
 -- versão do PHP: 7.4.11
 
@@ -20,6 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `fseletro`
 --
+CREATE DATABASE `fseletro`; 
 
 -- --------------------------------------------------------
 
@@ -31,22 +32,19 @@ CREATE TABLE `cliente` (
   `id_cliente` int(11) NOT NULL,
   `nome_cliente` varchar(255) NOT NULL,
   `cpf` bigint(11) NOT NULL,
-  `cep` int(8) NOT NULL,
+  `cep` int(9) NOT NULL,
   `telefone` bigint(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Estrutura da tabela `comentarios`
+-- Extraindo dados da tabela `cliente`
 --
 
-CREATE TABLE `comentarios` (
-  `id_comentario` int(11) NOT NULL,
-  `nome_cliente` varchar(250) NOT NULL,
-  `msg` varchar(500) NOT NULL,
-  `data` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `cliente` (`id_cliente`, `nome_cliente`, `cpf`, `cep`, `telefone`) VALUES
+(1, 'Thiago Souza Ferraz', 49487430890, 6236215, 11910079111),
+(2, 'José A P Ferraz', 88888888888, 6236215, 11910079111),
+(3, 'Sandra dos Santos', 111111111111, 6236215, 11910079111),
+(4, 'João da Silva', 88888888888, 6236215, 11910079111);
 
 -- --------------------------------------------------------
 
@@ -57,13 +55,20 @@ CREATE TABLE `comentarios` (
 CREATE TABLE `pedidos` (
   `id_pedido` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL,
-  `cep` int(8) NOT NULL,
-  `telefone` bigint(11) NOT NULL,
   `id_produto` int(11) NOT NULL,
-  `valor_unitario` float NOT NULL,
-  `quantidade` int(11) NOT NULL,
-  `valor_total` float NOT NULL
+  `quantidade` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `pedidos`
+--
+
+INSERT INTO `pedidos` (`id_pedido`, `id_cliente`, `id_produto`, `quantidade`) VALUES
+(4, 1, 4, 1),
+(5, 1, 1, 1),
+(6, 2, 2, 1),
+(10, 4, 4, 3),
+(11, 1, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -107,12 +112,6 @@ ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_cliente`,`cpf`) USING BTREE;
 
 --
--- Índices para tabela `comentarios`
---
-ALTER TABLE `comentarios`
-  ADD PRIMARY KEY (`id_comentario`);
-
---
 -- Índices para tabela `pedidos`
 --
 ALTER TABLE `pedidos`
@@ -134,19 +133,13 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `comentarios`
---
-ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
