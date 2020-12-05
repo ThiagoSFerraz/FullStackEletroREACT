@@ -9,7 +9,7 @@ export default function Produtos() {
     const [produtos, setProdutos ] = useState([]);
 
     useEffect(async () => {
-        const resposta = await fetch("http://localhost/fullstackeletro/backend/")
+        const resposta = await fetch("http://localhost/fullstackeletro/backend/produto.php")
         const dados = await resposta.json()
         setProdutos(dados);
         
