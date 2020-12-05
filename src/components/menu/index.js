@@ -9,7 +9,7 @@ function BaseMenu(props) {
 
         <Navbar className="navbar-white" bg="warning" expand="lg" fixed="top">
             <Navbar.Brand>
-                FullStackEletro
+                FullStackEletro &copy;
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="item-menu" />
             <Navbar.Collapse id="item-menu" data-toggle="collapse">
