@@ -9,7 +9,7 @@ export default function Produtos() {
     const [produtos, setProdutos ] = useState([]);
 
     useEffect(async () => {
-        const resposta = await fetch("http://18.225.33.94/reactbackrepo/produto.php")
+        const resposta = await fetch("http://3.139.100.157/reactbackrepo/produto.php")
         const dados = await resposta.json()
         setProdutos(dados);
         
