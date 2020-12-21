@@ -8,7 +8,7 @@ export default function Pedidopg() {
     const [pedidos, setPedidos ] = useState([]);
 
     useEffect(async () => {
-        const resposta = await fetch("http://localhost/fullstackeletro/backend/pedidos.php")
+        const resposta = await fetch("http://18.225.33.94/reactbackrepo/pedidos.php")
         const dados = await resposta.json()
         setPedidos(dados);
         
